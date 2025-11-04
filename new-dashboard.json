@@ -121,7 +121,7 @@
             "refId": "A"
           }
         ],
-        "title": "New panel",
+        "title": "Log Count for nbg1-prod1-controlplane-1",
         "type": "timeseries"
       }
     ],
