@@ -31,7 +31,6 @@
           "type": "loki",
           "uid": "ef32df9cca7eoe"
         },
-        "description": "Shows the total number of log entries per container in the \"loki\" namespace over time, helping to identify activity patterns and anomalies.",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -116,13 +115,13 @@
               "uid": "ef32df9cca7eoe"
             },
             "direction": "backward",
-            "editorMode": "code",
-            "expr": "sum by(container) (count_over_time({namespace=\"loki\"} [$__auto]))",
+            "editorMode": "builder",
+            "expr": "count_over_time({host=\"nbg1-prod1-controlplane-1\"} [$__auto])",
             "queryType": "range",
             "refId": "A"
           }
         ],
-        "title": "Log Count by Container (Loki Namespace)",
+        "title": "New panel",
         "type": "timeseries"
       }
     ],
