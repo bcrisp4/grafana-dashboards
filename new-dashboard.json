@@ -121,7 +121,7 @@
             "refId": "A"
           }
         ],
-        "title": "Controlplane-1 Log Count",
+        "title": "",
         "type": "timeseries"
       }
     ],
