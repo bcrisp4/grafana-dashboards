@@ -115,13 +115,13 @@
               "uid": "ef32df9cca7eoe"
             },
             "direction": "backward",
-            "editorMode": "builder",
-            "expr": "count_over_time({host=\"nbg1-prod1-controlplane-1\"} [$__auto])",
+            "editorMode": "code",
+            "expr": "sum by(container) (count_over_time({namespace=\"loki\"} [$__auto]))",
             "queryType": "range",
             "refId": "A"
           }
         ],
-        "title": "Log Count for nbg1-prod1-controlplane-1",
+        "title": "Controlplane-1 Log Count",
         "type": "timeseries"
       }
     ],
