@@ -1,19 +1,92 @@
 {
-  "apiVersion": "dashboard.grafana.app/v0alpha1",
+  "apiVersion": "dashboard.grafana.app/v1beta1",
   "kind": "Dashboard",
   "metadata": {
     "name": "5317bdb1-0a85-48b0-9fa4-40837660885e"
   },
   "spec": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations \u0026 Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "links": [],
     "panels": [
       {
+        "datasource": {
+          "type": "loki",
+          "uid": "ef32df9cca7eoe"
+        },
         "fieldConfig": {
           "defaults": {
             "color": {
               "mode": "palette-classic"
             },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "showValues": false,
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
             "unit": "short"
-          }
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 8,
@@ -22,14 +95,31 @@
           "y": 0
         },
         "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
               "type": "loki",
               "uid": "ef32df9cca7eoe"
             },
-            "expr": "sum(rate({job=~\".+\"}[$__auto]))",
+            "direction": "backward",
+            "editorMode": "code",
+            "expr": "sum(rate({service=~\".+\"}[$__auto]))",
             "legendFormat": "Logs per second",
+            "queryType": "range",
             "refId": "A"
           }
         ],
@@ -42,8 +132,57 @@
             "color": {
               "mode": "palette-classic"
             },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "showValues": false,
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
             "unit": "short"
-          }
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 8,
@@ -52,6 +191,20 @@
           "y": 8
         },
         "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
@@ -72,8 +225,57 @@
             "color": {
               "mode": "palette-classic"
             },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "showValues": false,
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
             "unit": "short"
-          }
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 8,
@@ -82,6 +284,20 @@
           "y": 8
         },
         "id": 3,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
@@ -97,6 +313,22 @@
         "type": "timeseries"
       },
       {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 8,
           "w": 8,
@@ -107,9 +339,25 @@
         "options": {
           "legend": {
             "displayMode": "table",
-            "placement": "right"
+            "placement": "right",
+            "showLegend": true
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "sort": "desc",
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
           }
         },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
@@ -125,6 +373,22 @@
         "type": "piechart"
       },
       {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 8,
           "w": 8,
@@ -135,9 +399,25 @@
         "options": {
           "legend": {
             "displayMode": "table",
-            "placement": "right"
+            "placement": "right",
+            "showLegend": true
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "sort": "desc",
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
           }
         },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
@@ -153,6 +433,22 @@
         "type": "piechart"
       },
       {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 8,
           "w": 8,
@@ -163,9 +459,25 @@
         "options": {
           "legend": {
             "displayMode": "table",
-            "placement": "right"
+            "placement": "right",
+            "showLegend": true
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "sort": "desc",
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
           }
         },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
@@ -181,6 +493,10 @@
         "type": "piechart"
       },
       {
+        "datasource": {
+          "type": "loki",
+          "uid": "ef32df9cca7eoe"
+        },
         "gridPos": {
           "h": 10,
           "w": 24,
@@ -189,17 +505,26 @@
         },
         "id": 7,
         "options": {
+          "dedupStrategy": "none",
+          "enableInfiniteScrolling": false,
+          "enableLogDetails": true,
+          "showControls": false,
           "showLabels": true,
           "showTime": true,
-          "sortOrder": "Descending"
+          "sortOrder": "Descending",
+          "wrapLogMessage": false
         },
+        "pluginVersion": "12.3.0",
         "targets": [
           {
             "datasource": {
               "type": "loki",
               "uid": "ef32df9cca7eoe"
             },
-            "expr": "{job=~\".+\"}",
+            "direction": "backward",
+            "editorMode": "code",
+            "expr": "{service=~\".+\"}",
+            "queryType": "range",
             "refId": "A"
           }
         ],
@@ -207,18 +532,24 @@
         "type": "logs"
       }
     ],
+    "preload": false,
     "refresh": "30s",
-    "schemaVersion": 38,
+    "schemaVersion": 42,
     "tags": [
       "logs",
       "loki",
       "overview"
     ],
+    "templating": {
+      "list": []
+    },
     "time": {
       "from": "now-1h",
       "to": "now"
     },
+    "timepicker": {},
     "timezone": "browser",
-    "title": "Loki Logs Overview"
+    "title": "Loki Logs Overview",
+    "weekStart": ""
   }
 }
